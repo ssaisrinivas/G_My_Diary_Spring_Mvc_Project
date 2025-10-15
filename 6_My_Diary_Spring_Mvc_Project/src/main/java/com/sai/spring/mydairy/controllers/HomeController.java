@@ -53,6 +53,7 @@ public class HomeController {
 		this.entriesBusiness = entriesBusiness;
 	}
 
+	
 	@RequestMapping("/home")
 	public ModelAndView loginPage() {
 
@@ -81,8 +82,10 @@ public class HomeController {
 		try {
 			entries = entriesBusiness.findByUserId(user.getId());
 		} catch (Exception e) {
+			
 			e.printStackTrace();
 		}
+		
 		model.addObject("entrieslist", entries);
 
 		return model;
